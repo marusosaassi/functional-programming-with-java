@@ -12,7 +12,10 @@ public class FP01Functional {
                 "AWS", "PCF", "Azure", "Docker", "Kubernetes");
         //printAllCoursesIndividually(courses);
         //printSpringCourses(courses);
-        printCourseWithAtLeast4Letters(courses);
+        //printCourseWithAtLeast4Letters(courses);
+        //printSquaresOfEvenNumbers(numbers);
+        //printCubesOfOddNumbers(numbers);
+        printNumberOfCharacters(courses);
     }
 
     /*private static void print(int number) {
@@ -55,6 +58,26 @@ public class FP01Functional {
     private static void printCourseWithAtLeast4Letters(List<String> courses) {
         courses.stream()
                 .filter(course -> course.length() > 4)
+                .forEach(System.out::println);
+    }
+
+    private static void printSquaresOfEvenNumbers(List<Integer> numbers) {
+        numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .map(number -> number * number)
+                .forEach(System.out::println);
+    }
+
+    private static void printCubesOfOddNumbers(List<Integer> numbers) {
+        numbers.stream()
+                .filter(number -> number % 2 != 0)
+                .map(number -> number * number * number)
+                .forEach(System.out::println);
+    }
+
+    private static void printNumberOfCharacters(List<String> courses) {
+        courses.stream()
+                .map(course -> course + " " + course.length())
                 .forEach(System.out::println);
     }
 }
